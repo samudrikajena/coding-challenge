@@ -24,30 +24,21 @@
 
 function search_multiples(int $n)
 {
-  $c1 = 3;    // keeps tracking multiples of 3
-  $c2 = 5;    // keeps tracking multiples of 5
       
   for($i = 1 ; $i <= $n ; $i++){
-      $str = "";
+      switch($i){
+              case($i % 3 === 0 && $i % 5 === 0): echo "Linianos <br />";
+                   break;
+              case($i % 3 === 0) : echo "Linio <br />";
+                   break;
+              case($i % 5 === 0) : echo "IT <br />";
+                   break;
+              default:
+                echo $i. "<br />";              
+              
+             }
       
-      // Find multiples of 3
-      
-      if($i == $c1 ){
-              $c1 +=3; // Update next multiple of 3 
-              $str .= "Linio <br />";
-      }
-      
-      if($i == $c2 ){
-              $c2 +=5; // Update next multiple of 5 
-              $str .="IT <br />";
-      }
-      
-      if($str !== "")
-              echo $str. "<br />";
-      echo $i."<br />"
-      
-  }
+        }
 }
 
 search_multiples(100);
-
